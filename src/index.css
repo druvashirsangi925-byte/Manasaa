@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    background-color: #0B0B0F;
+  }
+  body {
+    @apply bg-transparent text-white font-sans overflow-x-hidden selection:bg-softgold selection:text-midnight;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+  border: 2px solid #0B0B0F;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #EAB308;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card-gold {
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(234, 179, 8, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5), 0 0 15px rgba(234, 179, 8, 0.05);
+}
+
+.glass-card-red {
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Cursor Glow (GPU-Accelerated) */
+.cursor-glow {
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  top: -300px;
+  left: -300px;
+  transform: translate3d(var(--x, 0px), var(--y, 0px), 0);
+  z-index: 10;
+  will-change: transform;
+}
+
+/* Typing Caret Animation */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+  color: #EAB308;
+  margin-left: 2px;
+}
+
+/* Custom styles for Handwriting Letter */
+.paper-texture {
+  background-color: #fdfaf2;
+  background-image: radial-gradient(#ece6d8 1px, transparent 0), radial-gradient(#ece6d8 1px, transparent 0);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+}
+
+/* Map flight paths */
+.path-glow {
+  filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.6));
+}
+
+.germany-map-svg {
+  filter: drop-shadow(0 0 20px rgba(17, 24, 39, 0.8));
+}
